@@ -1,44 +1,44 @@
 module Permissions {
-	Class User {
+  Class User {
       String name;
       String email;
       String password;
-	}
+  }
 
-	Class Role {
+  Class Role {
       String name;
-	}
+  }
 
-	Class Permission {
+  Class Permission {
       Integer userId;
       Integer roleId;
       Boolean isGranted;
-	}
+  }
 
-	Table User {
+  Table User {
        Id,
        Name,
        Email,
        Password
-	}
+  }
 
-	Table Role {
+  Table Role {
        Id,
        Name
-	}
+  }
 
-	Table Permission {
+  Table Permission {
        Id,
        UserId,
        RoleId,
        IsGranted
-	}
+  }
 
-    function AddUser(user, name, email, password): boolean;
-    function RegisterRole(role, name): boolean;
-    function GrantPermissionToUser(userId, isGranted): boolean;
-    function GrantPermissionToRole(roleId, isGranted): boolean;
-    function CheckPermission(userId, isGranted): boolean;
-    function AssignRoleToUser(userId): boolean;
+  function AddUser(user, name, email, password): boolean;
+  function RegisterRole(role, name): boolean;
+  function GrantPermissionToUser(userId, isGranted): boolean;
+  function GrantPermissionToRole(roleId, isGranted): boolean;
+  function CheckPermission(userId, isGranted): boolean;
+  function AssignRoleToUser(userId): boolean;
 
 }
